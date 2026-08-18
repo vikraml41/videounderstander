@@ -168,7 +168,6 @@ def run_distill(art: Artifact, llm: LLM) -> dict:
             system=prompts.DISTILL_SYSTEM, max_tokens=32000, effort="high")
         chunk_yaml = _parse_yaml(raw)
         chunks_out.append(chunk_yaml)
-        new_state = chunk_yaml.get("new_state") or []
         carried = [s for c in chunks_out for s in (c.get("new_state") or [])]
         if carried:
             carried_state = "\n".join(f"- {s}" for s in carried)

@@ -4,7 +4,7 @@ artifact/
   source.json          # metadata: source path/URL, duration, assumed_context
   transcript.json      # normalized transcript segments (post-ASR, pre-correction)
   transcript.corrected.json  # after OCR-based correction
-  frames/              # kept full-res frames, frame_MMMSS.S.jpg + manifest.json
+  frames/              # kept full-res frames, frame_SSSSSS.S.jpg + manifest.json
   thumbs/              # small grayscale PGMs used for dedup (disposable)
   ocr.json             # on-screen text per kept frame
   descriptions.json    # step-3 output per kept frame

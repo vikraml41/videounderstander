@@ -234,7 +234,8 @@ def run_sampling(video: Path, art: Artifact, fps: float = DEFAULT_FPS,
         # the *final* frame of the interval is the completed build step
         t_keep = iv.end_idx / fps
         t_start = iv.start_idx / fps
-        name = f"frame_{int(round(t_keep)):06d}.jpg"
+        # decisecond resolution so names stay unique at fps > 1
+        name = f"frame_{t_keep:08.1f}.jpg"
         out_path = art.frames_dir / name
         extract_frame(video, t_keep, out_path)
         manifest.append({
